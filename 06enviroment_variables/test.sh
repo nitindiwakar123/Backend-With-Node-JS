@@ -37,3 +37,5 @@ VAR1="Val1" VAR2="Val2" node --inspect app.js
 env -u VAR_NAME node --inspect app.js
 #multiple
 env -u VAR1 -u VAR2 node --inspect app.js
+
+djskfhgvccxn
