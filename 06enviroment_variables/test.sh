@@ -2,7 +2,7 @@
 
 # 1. View Environment Variables
 # echo $env_name
-# printenv
+# printenv  
 # env
 
 # Inheritance of Environment Variables in Processes
@@ -22,7 +22,7 @@ setx VAR_NAME "Value"
 # you can also set and delete system level enviroment variables but at this point you can do that with using powershell(in administrative mode) not bash because bash is not made for windows it is a linux based terminal and windows main terminal is powershell.
 
 #directly set enviroment variables on child process
-VAR_NAME="Value" node --inspect app.js
+VAR_NAME="Value" node --inspect app.js  
 
 #--inspect is used for debug and see node process enviroment variables
 

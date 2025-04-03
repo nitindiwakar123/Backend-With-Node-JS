@@ -1,0 +1,2 @@
+Absolute Path: C:\Sigma Web Development\Study_Materials\Node-JS\07file_system\text.txt
+Relative Path: text.txt

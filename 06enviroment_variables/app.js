@@ -31,10 +31,65 @@
 
 //Update env variable inherited from parent in node js
 //first define a variable called num8 in bash.
-const num = process.env.num8;
-console.log(num);
-//update
-process.env.num8 = 45;
-console.log(process.env.num8);
+// const num = process.env.num8;
+// console.log(num);
+// //update
+// process.env.num8 = 45;
+// console.log(process.env.num8);
 
 //if you console num8 in node js you see value is changed but you if you echo num8 in parent process(bash) you can see it is not updated in bash because a child process only create a copy of parent's enviroment variables not directly reference on it.
+
+
+//setting up enviroment variable with .env file
+// Explanation: Detecting Line Endings and Parsing .env File in Node.js
+// Reading the .env File
+const fs = require('fs');
+
+// The file is read synchronously using the fs module and converted into a string.
+const fileData = fs.readFileSync('./.env').toString();
+
+// Detecting Line Endings
+// The script checks whether the file contains \r\n (Windows-style CRLF) or \n (Unix-style LF) to determine how the lines are separated.
+// Splitting the File into Lines
+// Depending on the detected line ending, the file content is split into an array of lines.
+
+if(fileData.includes("\r\n")) {
+    console.log("case 1");
+    
+    const obj = fileData.split("\r\n");
+    obj.forEach((variable) => {
+        const [key, value] = variable.split("=");
+        process.env[key] = value;
+    });
+} else if (fileData.includes("\n")) {
+    console.log("case 2");
+    
+    const obj = fileData.split("\n");
+    obj.forEach((variable) => {
+        const [key, value] = variable.split("=");
+        process.env[key] = value;
+    });
+} else {
+    console.log("case 3");
+    
+}
+
+const enviromentVariables = process.env;
+
+
+// Parsing Key-Value Pairs
+
+// Each line is processed to extract the key and value by splitting at the = sign.
+
+// Storing Variables in process.env
+
+// The extracted key-value pairs are assigned to process.env, making them accessible as environment variables.
+
+// Handling Different Cases
+
+// If the file uses \r\n, the CRLF format is used for splitting.
+
+// If the file uses \n, the LF format is used for splitting.
+
+// If neither \r\n nor \n is found, the file format is unknown, and no action is taken.
+
