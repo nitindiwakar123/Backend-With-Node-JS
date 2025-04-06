@@ -1,0 +1,21 @@
+An executable file in Windows is a file that can be directly run by the operating system to perform a task or launch a program. These files usually contain a program or a script that the system can interpret or execute.
+
+There are two types of executable files
+1. script executable files
+2. binary executable files
+
+Common Types of Executable Files in Windows:
+
+ .exe (Binary Executable File)
+Most common type.
+Used for applications and installers.
+Double-click to run.
+
+.bat (Script Executable File)
+A plain text file containing a series of commands.
+Runs in the Command Prompt (cmd.exe).
+Often used for automation or scripting.
+
+.cmd (Script Executable File)
+Similar to .bat but more closely tied to cmd.exe.
+
