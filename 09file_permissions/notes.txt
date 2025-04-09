@@ -1,0 +1,61 @@
+File Permissions in Windows:
+
+File permissions in Windows control who can access, modify, or execute files and folders. Here's a breakdown to help you understand how they work:
+
+🔑 Types of Permissions
+Windows uses NTFS (New Technology File System) permissions. There are two levels:
+
+1. Basic Permissions:
+These are commonly used and include:
+
+Permission	Description
+Full Control - Do anything (read, write, modify, delete, change permissions).
+Modify	Read, write, and delete files/folders.
+
+Read & Execute - View and run executable files.
+List Folder Contents -	View names of files and subfolders.
+Read -	View file content and attributes.
+Write -	Modify file content and create new files/folders.
+
+2. Advanced Permissions:
+These include more specific controls like:
+
+Traverse folder / execute file
+
+Delete subfolders and files
+
+Change permissions
+
+Take ownership
+
+🔧 How to View or Edit File Permissions
+Right-click the file/folder → Click Properties
+
+Go to the Security tab
+
+Click Edit to change permissions
+
+Use Add / Remove / Edit for specific users or groups
+
+Click Advanced for detailed control
+
+👥 Who Can Have Permissions
+Users (e.g., you, another account)
+
+Groups (e.g., Administrators, Everyone)
+
+Permissions can be inherited from the parent folder or explicitly set.
+
+⚠️ Common Terms
+Owner: Has full control and can change permissions.
+
+Inherited Permissions: Passed down from parent folder.
+
+Effective Permissions: The actual result of combined permissions from user + group + inheritance.
+
+✅ Tips
+Use "Effective Access" in Advanced settings to see what permissions a user actually has.
+
+Be careful with "Deny" – it overrides all Allow permissions.
+
+If you're locked out of a file, you might need to take ownership first.
