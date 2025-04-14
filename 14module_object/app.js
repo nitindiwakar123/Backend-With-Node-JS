@@ -40,7 +40,7 @@ const math = require('./math');
 // 🔹 module.isPreloading
 //     → Boolean indicating if the module is being preloaded via the `--require` flag
 //       when starting Node.js from the CLI.
-//     → Example use case: `node --require ./myModule.js app.js`
+//     → Example use case: `node --require ./math.js app.js`
 
 // To inspect the full module object, uncomment this line:
 // console.log(module);
