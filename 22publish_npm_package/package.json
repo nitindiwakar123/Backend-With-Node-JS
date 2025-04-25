@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+    "coder_nitin": "^1.0.1"
+  }
+}

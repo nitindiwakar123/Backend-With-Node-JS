@@ -13,7 +13,7 @@
 
 
 /*
-2. Local Modules
+2. Local / User Defined Modules
 ------------------
 - These are custom modules created by the developer.
 - They help in organizing code into reusable components.
