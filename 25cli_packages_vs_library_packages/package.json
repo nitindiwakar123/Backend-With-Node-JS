@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "abc": "vite"
+  },
+  "dependencies": {
+    "vite": "^6.3.3"
+  },
+  "bin": ""
+  
+}
