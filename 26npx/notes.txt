@@ -1,0 +1,25 @@
+when you write "npx filename"
+What npx does?
+Searches for a file and executes it.
+
+Search Step-1
+    Searches for package.json in current working directory
+    Searches for name key in the package.json if match
+    Searches for bin key and executes
+
+If Not Found Search Step-2
+    Searches for node_modules\.bin\file in current working directory
+    And executes file
+
+If Not Found Search Step-3
+    Searches for file in global npm/node_modules/ folder 
+    And executes file
+
+If Not Found Search Step-4
+     Searches for file package in C:\Users\Nitin\AppData\Local\npm-cache\_npx cache
+     And executes file
+
+If Not Found Search Step-5
+     Searches for file package in npm registry
+     Prompts to install the package if found
+     Downloads and installs and executes

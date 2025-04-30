@@ -18,28 +18,30 @@ let address = user.address;
 // ✅ Mutating the address object directly (will also affect user.address)
 // address.pincode = 244001;
 // address.country = "India";
+// console.log(user.address);
 
 // ❌ Now we are reassigning `address` to a completely new object
 // This breaks the reference with user.address
-address = {
-    pincode: 244001,
-    country: "India"
-};
+// address = {
+//     pincode: 244001,
+//     country: "India"
+// };
 
 // ✅ This will print the new address object (not connected to user anymore)
-console.log(address); 
+// console.log(address); 
 // Output: { pincode: 244001, country: 'India' }
 
 // ✅ This will print the original address object inside `user` (unchanged)
-console.log(user.address); 
+// console.log(user.address); 
 // Output: { city: 'Moradabad', state: 'UP' }
 
 // ========================
 // Module Exports in Node.js
 // ========================
+// console.log(module.exports);
 
 // `module.exports` is used to export values from a file in Node.js
-let superman = module.exports;
+// let superman = module.exports;
 
 // ❓ Checking if `superman` and `module.exports` point to the same object
 // console.log(module.exports === superman); // true

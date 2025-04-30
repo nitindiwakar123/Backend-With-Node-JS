@@ -1,4 +1,3 @@
-
 // What is a Module in Node.js?
 // A module is just a file. In Node.js, every JavaScript file is treated as a separate module. It helps in organizing code, avoiding polluting the global namespace, and reusing functionality.
 
@@ -14,11 +13,11 @@
 //     // your code here
 //   })();
   
-// var num = 0;
+var num = 0;
 // console.log(num);
 
 // If you want a truly global variable in Node.js, you have to explicitly attach it to the global object:
-// global.a = 10;
+global.a = 10;
 // console.log(global.a); 
 
 //you can also add a variable in global scope without using let, var, const but it is not recommended.
