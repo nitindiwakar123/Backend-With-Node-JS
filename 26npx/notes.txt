@@ -1,3 +1,20 @@
+NPM (Node Package Manager)
+Definition:
+NPM ek command-line tool hai jo Node.js environment mein packages ko manage karta hai. Internally, NPM ek JS code hai jo package installation, versioning aur dependency management ka kaam karta hai. Yeh packages ko node_modules folder mein install karta hai, jo project ke local dependencies ko store karta hai. NPM global aur local packages ko handle karta hai, aur package.json file ko project ke dependencies ke liye use karta hai.
+Internal Working:
+NPM ka core logic ek JS code hai jo npm command run karte waqt execute hota hai. Jab hum koi package install karte hain, NPM package registry se data fetch karke project mein install karta hai.
+Here you can see NPM Bash File: C:\Program Files\nodejs
+Here you can see NPM Main JS File: C:\Program Files\nodejs\node_modules\npm\bin
+
+NPX (Node Package Executor)
+Definition:
+NPX NPM ka ek tool hai jo Node.js packages ko bina globally install kiye directly run karne ka option deta hai. Internally, NPX ek JS file hai jo npx command run karte waqt execute hoti hai aur temporary execution ke liye kisi bhi package ko fetch karti hai aur use karti hai. Yeh tool primarily ek-time ke liye packages ko run karne ke liye use hota hai, taaki globally install karne ki zarurat na pade.
+Internal Working:
+NPX internally ek JavaScript file hai jo kisi bhi command ko execute karne se pehle package ko check karta hai aur agar wo globally install nahi hota to ek temporary location pe usse execute karne ka kaam karta hai.
+Here you can see NPX Bash File: C:\Program Files\nodejs
+Here you can see NPX Main JS File: C:\Program Files\nodejs\node_modules\npm\bin
+
+
 when you write "npx filename"
 What npx does?
 Searches for a file and executes it.

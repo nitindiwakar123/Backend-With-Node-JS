@@ -1,4 +1,7 @@
 {
     "name": "hello",
-    "bin": "app.js"
+    "bin": "app.js",
+    "devDependencies": {
+        "vite": "^6.3.5"
+    }
 }
