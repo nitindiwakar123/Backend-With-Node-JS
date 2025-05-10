@@ -1,0 +1,25 @@
+
+
+2:01:44 pm: ENOENT: no such file or directory, open 'C:\Sigma-Web-Development\Study_Materials\Node-JS\29fs_module02\testa.jpg' 
+ Error: ENOENT: no such file or directory, open 'C:\Sigma-Web-Development\Study_Materials\Node-JS\29fs_module02\testa.jpg'
+    at async open (node:internal/fs/promises:638:25)
+    at async Object.readFile (node:internal/fs/promises:1242:14)
+    at async file:///C:/Sigma-Web-Development/Study_Materials/Node-JS/29fs_module02/app.js:8:27
+
+2:02:02 pm: ENOENT: no such file or directory, open 'C:\Sigma-Web-Development\Study_Materials\Node-JS\29fs_module02\testa.jpg' 
+ Error: ENOENT: no such file or directory, open 'C:\Sigma-Web-Development\Study_Materials\Node-JS\29fs_module02\testa.jpg'
+    at async open (node:internal/fs/promises:638:25)
+    at async Object.readFile (node:internal/fs/promises:1242:14)
+    at async file:///C:/Sigma-Web-Development/Study_Materials/Node-JS/29fs_module02/app.js:8:27
+
+2:02:05 pm: ENOENT: no such file or directory, open 'C:\Sigma-Web-Development\Study_Materials\Node-JS\29fs_module02\testa.jpg' 
+ Error: ENOENT: no such file or directory, open 'C:\Sigma-Web-Development\Study_Materials\Node-JS\29fs_module02\testa.jpg'
+    at async open (node:internal/fs/promises:638:25)
+    at async Object.readFile (node:internal/fs/promises:1242:14)
+    at async file:///C:/Sigma-Web-Development/Study_Materials/Node-JS/29fs_module02/app.js:8:27
+
+2:02:06 pm: ENOENT: no such file or directory, open 'C:\Sigma-Web-Development\Study_Materials\Node-JS\29fs_module02\testa.jpg' 
+ Error: ENOENT: no such file or directory, open 'C:\Sigma-Web-Development\Study_Materials\Node-JS\29fs_module02\testa.jpg'
+    at async open (node:internal/fs/promises:638:25)
+    at async Object.readFile (node:internal/fs/promises:1242:14)
+    at async file:///C:/Sigma-Web-Development/Study_Materials/Node-JS/29fs_module02/app.js:8:27
