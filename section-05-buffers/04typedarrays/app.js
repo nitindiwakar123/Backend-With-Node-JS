@@ -29,21 +29,21 @@
 
 //Properties of ArrayBuffer
 // const a = new ArrayBuffer(4);
-// console.log(a.resizable);
+// console.log(a.resizable); //false
 // a.resize(8); //this will threw an Error because a.resizable = false.
 // if you want to a.resizable = true and want to change the bytelength(size) of arrayBuffer you need to set a.maxByteLength property on its declaration
 
 const b = new ArrayBuffer(4, {maxByteLength: 16});
 // console.log(b)
-// console.log(b.resizable);
+// console.log(b.resizable); //true
 // b.resize(8);
 // console.log(b);
 // b.resize(32); //this will throw error because you can only resize the arrayBuffer upto its maxByteLength you set on declaration.
 
 //Detached
-console.log(b.detached);
+console.log(b.detached); //false
 const c = b.transfer();
 console.log("b: ", b);
 console.log("c: ", c);
-console.log(b.detached);
-console.log(c.detached);
+console.log(b.detached); //true 
+console.log(c.detached); //false

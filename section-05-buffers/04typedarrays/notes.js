@@ -17,9 +17,9 @@
 // 		Uint8ClampedArray
 // 		etc.
 	
-// 	8 -> Multiple of 1
-// 	16 -> Multiple of 2
-// 	32 -> Multiple 0f 4
+// 	8 -> every element takes 1 byte 
+// 	16 -> every element takes 2 byte
+// 	32 -> every element takes 4 byte
 
 // 	when we create an object of typedArray, we get almost all methods of array on it.
 // 	we cannot change size of an array
