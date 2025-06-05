@@ -1,4 +1,5 @@
 import http from "http";
+import fs from "node:fs/promises";
 
 const a = new ArrayBuffer(8);
 // const uint8Array = new Uint8Array(a);
@@ -11,10 +12,12 @@ function startServer(responseData) {
   const server = http.createServer((req, res) => {
     res.setHeader("Content-Type", "text/txt; charset=utf-8");
     res.setHeader("Access-Control-Allow-Origin", "*");
-    if (req.url === "/favicon.ico") {
-      res.end();
-      return;
-    }
+    
+    req.on("data", (reqBody) => {
+      console.log(reqBody);
+      const file = fs.writeFile('info.txt', reqBody);
+    })
+
     res.end(responseData);
   });
 
