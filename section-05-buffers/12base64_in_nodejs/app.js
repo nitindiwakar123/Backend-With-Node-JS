@@ -8,10 +8,10 @@ import { Buffer } from "node:buffer";
 
 // const write = fs.writeFile('new.txt', text);
 
-// const buffer = await fs.readFile('favicon\\favicon-16x16.png', "base64");
-// fs.writeFile('new.txt', buffer);
-// const imageData = await fs.readFile('new.txt', "utf-8");
-// fs.writeFile('a.png', imageData, "base64");
+const buffer = await fs.readFile('favicon\\android-chrome-192x192.png', "base64");
+await fs.writeFile('new.txt', buffer);
+const imageData = await fs.readFile('new.txt', "utf-8");
+fs.writeFile('a.png', imageData, "base64");
 
 // const text = await fs.readFile('script.js', "base64");
 // fs.writeFile('script.txt', text);
@@ -36,9 +36,9 @@ import { Buffer } from "node:buffer";
 // console.log("encoding using base64: ", str3);
 // console.log("encoding using base64url: ", str4);
 
-const buf = Buffer.alloc(4);
-buf.write("YWI=");
-console.log(buf.toString("utf-8"));
+// const buf = Buffer.alloc(4);
+// buf.write("YWI=");
+// console.log(buf.toString("utf-8"));
 
 /* ******************************************************************** */
 
