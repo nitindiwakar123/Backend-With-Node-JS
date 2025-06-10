@@ -10,10 +10,12 @@ const readStream = fs.createReadStream("C:\\Users\\Nitin\\OneDrive\\Desktop\\Bla
 const writeStream = fs.createWriteStream('video.mkv');
 
 readStream.on('data', (chunk) => {
+    // console.log(writeStream.writableNeedDrain);
     const isEmpty = writeStream.write(chunk); 
     // console.log("isEmpty: ", isEmpty);
     // console.log("writeStream.writableLength: ", writeStream.writableLength);
     if(!isEmpty) {
+    // console.log(writeStream.writableNeedDrain);
         readStream.pause();
     }
 });
