@@ -1,3 +1,5 @@
+// Backpressure and Internal Buffer of writable Streams
+
 import fs from "node:fs";
 
 const writeStream = fs.createWriteStream('text.txt', { highWaterMark: 4 });
