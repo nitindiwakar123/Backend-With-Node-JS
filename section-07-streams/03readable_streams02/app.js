@@ -1,51 +1,51 @@
 import fs, { read } from "node:fs";
 
-// const readStream = fs.createReadStream('text.txt');
+const readStream = fs.createReadStream('text.txt');
 
-//Initial
-// console.log(readStream.readableFlowing); //null
-// console.log(readStream.readableEnded); //false
-// console.log(readStream.isPaused()); //false
+// Initial
+console.log(readStream.readableFlowing); //null
+console.log(readStream.readableEnded); //false
+console.log(readStream.isPaused()); //false
 
-//Flowing
-// readStream.on('data', () => { });
-// console.log(readStream.readableFlowing); //true
-// console.log(readStream.readableEnded); //false
-// console.log(readStream.isPaused()); //false
-
-
-//Paused
-// readStream.pause();
-// console.log(readStream.readableFlowing); //false
-// console.log(readStream.readableEnded); //false
-// console.log(readStream.isPaused()); //true
+// Flowing
+readStream.on('data', () => { });
+console.log(readStream.readableFlowing); //true
+console.log(readStream.readableEnded); //false
+console.log(readStream.isPaused()); //false
 
 
-//End
-// readStream.on('end', () => {
-// console.log(readStream.readableFlowing); //true
-// console.log(readStream.readableEnded); //true
-// console.log(readStream.isPaused()); //false
-// })
+// Paused
+readStream.pause();
+console.log(readStream.readableFlowing); //false
+console.log(readStream.readableEnded); //false
+console.log(readStream.isPaused()); //true
+
+
+// End
+readStream.on('end', () => {
+console.log(readStream.readableFlowing); //true
+console.log(readStream.readableEnded); //true
+console.log(readStream.isPaused()); //false
+})
 
 
 // let count = 0;
-const readStream2 = fs.createReadStream('text.txt', { highWaterMark: 1 });
+// const readStream2 = fs.createReadStream('text.txt', { highWaterMark: 1 });
 
-readStream2.on("data", (chunk) => {
-    // count++;
-    if (readStream2.readableHighWaterMark === readStream2.bytesRead) {
-        // console.log(readStream2.readableHighWaterMark, readStream2.bytesRead);
-        fs.writeFileSync('new.txt', chunk);
-    } else {
-        // console.log(chunk.buffer);
-        fs.appendFileSync('new.txt', chunk);
-    }
-    readStream2.pause();
-    setTimeout(() => {
-        readStream2.resume();
-    }, 50);
-});
+// readStream2.on("data", (chunk) => {
+//     // count++;
+//     if (readStream2.readableHighWaterMark === readStream2.bytesRead) {
+//         // console.log(readStream2.readableHighWaterMark, readStream2.bytesRead);
+//         fs.writeFileSync('new.txt', chunk);
+//     } else {
+//         // console.log(chunk.buffer);
+//         fs.appendFileSync('new.txt', chunk);
+//     }
+//     readStream2.pause();
+//     setTimeout(() => {
+//         readStream2.resume();
+//     }, 50);
+// });
 
 // readStream2.on('pause', () => console.log("Stream Paused!"));
 // readStream2.on('resume', () => console.log("Stream Resumed!"));
