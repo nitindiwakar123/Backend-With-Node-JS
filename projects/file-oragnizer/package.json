@@ -1,0 +1,15 @@
+{
+  "name": "file-oragnizer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "organize": "index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
