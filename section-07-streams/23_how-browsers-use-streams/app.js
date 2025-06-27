@@ -1,3 +1,4 @@
+// how browsers use streams
 import http from "http";
 import fs from "node:fs/promises";
 
@@ -10,6 +11,7 @@ const server = http.createServer(async (req, res) => {
 
   readStream.on('data', (chunk) => {
     res.write(chunk);
+    console.log(chunk);
     readStream.pause();
     setTimeout(() => {
       readStream.resume();
