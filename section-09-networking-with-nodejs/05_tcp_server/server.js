@@ -1,55 +1,65 @@
 import net from "node:net";
 
 let clientsList = [];
+let clientsIdList = [];
 let idCount = 1;
 
 process.stdin.on('data', (chunk) => {
-    const clientId = parseInt((chunk.toString()).split("-")[1]);
-    // console.log(clientId)
-    clientsList.forEach((socket, idx) => {
-        if(clientId >= 0 && idx === clientId) {
-            socket.write(chunk);
-        } else if(!clientId){
-            socket.write(chunk);
+    const clientId = (chunk.toString()).split(":")[0].trim();
+    const message = (chunk.toString()).split(":")[1];
+
+    if(clientId) {
+    clientsList.forEach((socketObj, idx) => {
+        if(clientId == socketObj.clientId) {
+            socketObj.socket.write(`Server: ${message}`);
         }
     });
+    } else {
+        clientsList.forEach((socketObj, idx) => {
+            socketObj.socket.write(`Server: ${chunk}`);
+    });
+    }
+    
 });
 
 const server = net.createServer((socket) => {
-    clientsList.push({clientId: `Client-${idCount}`, socket: socket});
+    const client = {clientId: `client-${idCount}`, socket: socket}
+    clientsList.push(client);
+    clientsIdList.push(client.clientId);
     idCount++;
-    console.log("Total clients connected: ", clientsList.length);
+    console.log("\nClients connected: ", clientsIdList);
     socket.on('data', (chunk) => {
          const data = chunk.toString();
         if(data.includes("name:")) {
-            const clientId = data.split(":")[1];
-            console.log(clientId)
+            const clientId = data.split(":")[1].trim();
             const client = clientsList.find((sock, idx) => socket === sock.socket);
             clientsList = clientsList.filter((sock, idx) => socket !== sock.socket);
-            // console.log(clientsList.length)
+            clientsIdList = clientsIdList.filter((id) => id !== client.clientId);
+            console.log(`\n${client.clientId} renamed: `, clientId);
             client.clientId = clientId;
             clientsList.push(client); 
-            // console.log(clientsList.length)
+            clientsIdList.push(clientId);
         } else {
-            const clientId = clientsList.find((obj) => socket === obj.socket? obj.socket.clientId: null);
-            console.log(clientId);
-        //     clientsList.forEach((obj, idx) => {
-        // obj.socket.write(`client ${idx}: ${chunk}`);
-        // });
+            const client = clientsList.find((obj) => socket === obj.socket);
+            const clientId = client.clientId.trim();
+            console.log(`${clientId}: ${chunk}`);
+            clientsList.forEach((obj, idx) => {
+            if(obj !== client) obj.socket.write(`${clientId}: ${chunk}`);
+        });
         }
-        socket.write("TCP server received your data!");
+        // socket.write(`Server: message sent!`);
         
     }); 
 
     socket.on('close', () => {
-        console.log(`Client Disconnected: Port: ${socket.remotePort}, IP: ${socket.remoteAddress}`);
+        console.log(`\nClient Disconnected: Port: ${socket.remotePort}, IP: ${socket.remoteAddress}`);
     });
 
     socket.on('error', () => {
-        console.log(`Client Lost: Port: ${socket.remotePort}, IP: ${socket.remoteAddress}`);
+        console.log(`\nClient Lost: Port: ${socket.remotePort}, IP: ${socket.remoteAddress}`);
     });
 
-    console.log(`Client Connected: Port: ${socket.remotePort}, IP: ${socket.remoteAddress}`);
+    console.log(`\nClient Connected: Port: ${socket.remotePort}, IP: ${socket.remoteAddress}`);
     socket.write("Please enter your name: (name:abc)");
     // process.stdin.pipe(socket);
 

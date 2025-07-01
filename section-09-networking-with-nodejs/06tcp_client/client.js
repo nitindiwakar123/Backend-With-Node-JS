@@ -1,7 +1,7 @@
 import net from "node:net";
 
 
-const socket = net.createConnection({ port: 4000, host: "192.168.168.215" });
+const socket = net.createConnection({ port: 4000, host: "192.168.43.92" });
 
 process.stdin.pipe(socket);
 
