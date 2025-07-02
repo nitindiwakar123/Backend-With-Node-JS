@@ -1,5 +1,23 @@
-const response = await fetch("http://192.168.43.92:4000");
+const response = await fetch("http://192.168.145.215:4000");
 
+console.log({response});
+
+// const data = await response.text();
+const decoder = new TextDecoder();
 for await (const chunk of response.body) {
-    console.log(chunk);
+    document.writeln(decoder.decode(chunk));
 }
+
+// console.log(data);
+
+// Why we await twice when making a fetch call.
+
+//     It is because first await waits for response headers.
+//     Second await waits for response data.
+
+//     Eg. 
+//     const res = await fetch("http://example.com");
+//     // This will resolve when all response headers are finished and it get "\n\n"
+
+//     const data = await response.json();
+//     // This will resolve when response data is finished, socket ended and data is parsed.
