@@ -6,7 +6,7 @@ const server = net.createServer(async (socket) => {
     const fileHandle = await fs.open("numbers.txt", "w");
     const writeStream = fileHandle.createWriteStream();
 
-    socket.write('HTTP/1.1\n');
+    socket.write('HTTP/1.1\n\n');
     // socket.pipe(writeStream);
     socket.on('data', (chunk) => {
         writeStream.write(chunk);

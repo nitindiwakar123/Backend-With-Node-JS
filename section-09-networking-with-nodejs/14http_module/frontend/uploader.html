@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload a file</title>
+</head>
+<body>
+    <!-- <h1>Upload a file</h1>
+    <form action="http://192.168.145.215:4000" method="post" enctype="multipart/form-data">
+        <input type="file" name="File" id="file" required>
+        <button type="submit">Upload</button>
+    </form> -->
+</body>
+<script type="module">
+    const response = await fetch("http://192.168.145.215:4000", {
+        method: "POST",
+        body: "Hello server I am frontend!"
+    });
+    const data = await response.text();
+    console.log(data);
+</script>
+</html>
